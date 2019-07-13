@@ -1,5 +1,6 @@
+var total = 5
 var timer = {
-    time: 100,
+    time: 60,
 
     run: function () {
         counter = setInterval(timer.decrement, 1000);
@@ -8,12 +9,13 @@ var timer = {
     
 
     decrement: function () {
-        if (timer.time > 0) {
+        if (timer.time > 0 && total > 0) {
             timer.time--;
         }
         $('#timeRemaining').html("Time Remaining: " + timer.time);
         if (timer.time === 0) {
             $("#theQuestion").html("Time is up!");
+            $("#container4").html("You Lose!")
 
 
 
@@ -63,7 +65,8 @@ var Questions = {
 
 }
 
-var score = 0
+score = 0
+
 function Question0() {
     
     $("#bttn").on("click", function () {
@@ -79,31 +82,33 @@ function Question0() {
 
 
         $("#answer1").click(function () {
-            score++
+            
             $("#theQuestion").html("You Are Correct");
-            setTimeout('', 5000);
-            changeQuestion1();
+            
+            setTimeout(changeQuestion1, 5000);
         })
         $("#answer2").click(function () {
-            $("#theQuestion").html("You Are Incorrect");
-            setTimeout('', 5000);
-            changeQuestion1();
+            
+            $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q1.a);
+ 
+            setTimeout(changeQuestion1, 5000);
 
         })
         $("#answer3").click(function () {
-            $("#theQuestion").html("You Are Incorrect");
-            setTimeout('', 5000);
-            changeQuestion1();
+           
+            $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q1.a);       
+            setTimeout(changeQuestion1, 5000);
         })
         $("#answer4").click(function () {
-            $("#theQuestion").html("You Are Incorrect");
-            setTimeout('', 5000);
-            changeQuestion1();
+            $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q1.a);           
+            setTimeout(changeQuestion1, 5000);
         })
+        
 
 
 
     })
+    
 }
 Question0();
 function changeQuestion1() {
@@ -115,29 +120,30 @@ function changeQuestion1() {
 
 
     $("#answer1").click(function () {
-
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion2();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q2.d);     
+        setTimeout(changeQuestion2, 5000);
     })
     $("#answer2").click(function () {
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion2();
+        
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q2.d);       
+        setTimeout(changeQuestion2, 5000);
 
     })
     $("#answer3").click(function () {
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion2();
+        
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q2.d);
+        setTimeout(changeQuestion2, 5000);
     })
     $("#answer4").click(function () {
-        score++
+        
         $("#theQuestion").html("You Are Correct");
-        setTimeout('', 5000);
-        changeQuestion2();
+
+        setTimeout(changeQuestion2, 5000);
+        
     })
-    console.log(score)
+    
+    console.log(total)
+    
 }
 function changeQuestion2() {
     $("#theQuestion").html(Questions.Q3.trivia);
@@ -149,28 +155,25 @@ function changeQuestion2() {
 
     $("#answer1").click(function () {
 
-        $("#theQuestion").html("You Are Correct");
-        setTimeout('', 5000);
-        changeQuestion3();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q3.b);
+        setTimeout(changeQuestion3, 5000);
     })
     $("#answer2").click(function () {
-        score++
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion3();
+       
+        $("#theQuestion").html("You Are Correct");
+ 
+        setTimeout(changeQuestion3, 5000);
 
     })
     $("#answer3").click(function () {
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion3();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q3.b);      
+        setTimeout(changeQuestion3, 5000);
     })
     $("#answer4").click(function () {
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion3();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q3.b);       
+        setTimeout(changeQuestion3, 5000);
     })
-    console.log(score)
+    
 }
 function changeQuestion3() {
     $("#theQuestion").html(Questions.Q4.trivia);
@@ -182,28 +185,25 @@ function changeQuestion3() {
 
     $("#answer1").click(function () {
 
-        $("#theQuestion").html("You Are Correct");
-        setTimeout('', 5000);
-        changeQuestion4();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q4.d);   
+        setTimeout(changeQuestion4, 5000);
     })
     $("#answer2").click(function () {
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion4();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q4.d);         
+        setTimeout(changeQuestion4, 5000);
 
     })
     $("#answer3").click(function () {
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion4();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q4.d);         
+        setTimeout(changeQuestion4, 5000);
     })
     $("#answer4").click(function () {
-        score++
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        changeQuestion4();
+        
+        $("#theQuestion").html("You Are Correct");
+        
+        setTimeout(changeQuestion4, 5000);
     })
-    console.log(score)
+    
 }
 function changeQuestion4() {
     $("#theQuestion").html(Questions.Q5.trivia);
@@ -215,36 +215,31 @@ function changeQuestion4() {
 
     $("#answer1").click(function () {
 
-        $("#theQuestion").html("You Are Correct");
-        setTimeout('', 5000);
-        finale();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q5.c); 
+        setTimeout(finale, 5000);
 
     })
     $("#answer2").click(function () {
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        finale();
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q5.c); 
+        setTimeout(finale, 5000);
 
 
     })
     $("#answer3").click(function () {
-        score++
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        finale();
+        
+        $("#theQuestion").html("You Are Correct");
+        setTimeout(finale, 5000);
 
     })
     $("#answer4").click(function () {
-        $("#theQuestion").html("You Are Incorrect");
-        setTimeout('', 5000);
-        finale();
-
+        $("#theQuestion").html("You Are Incorrect. Correct answer was: " + Questions.Q5.c); 
+        setTimeout(finale, 5000);
     })
-    console.log(score)
+    total--
 }
 function finale() {
-    $("#theQuestion").html("So how did you do?");
-    $("#answer1").html("You got " + score + " out of 5 correct.");
+    $("#theQuestion").html("Thanks for playing!");
+    $("#answer1").html("See you next time :)");
     $("#answer2").hide();
     $("#answer3").hide();
     $("#answer4").hide();
