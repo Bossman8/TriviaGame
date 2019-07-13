@@ -50,3 +50,21 @@ p {
 #container5 {
     color: white;
 }
+#answer1:hover {
+    cursor: pointer;
+ }
+ #answer2:hover {
+    cursor: pointer;
+ }
+ #answer3:hover {
+    cursor: pointer;
+ }
+ #answer4:hover {
+    cursor: pointer;
+ }
+ @media screen and (max-width: 1400px) {
+    body {
+        background-image: none;
+        background-color: black !important;
+    }
+}
