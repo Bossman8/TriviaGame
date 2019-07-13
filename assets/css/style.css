@@ -1,0 +1,49 @@
+#container1 {
+    
+    padding-bottom: 5px;
+}
+
+#header {
+    text-align: center;
+    color: white;
+}
+#timeRemaining {
+    text-align: center;
+    color: White;
+}
+#container2 {
+    background-color: aqua;
+    margin-top: 5%;
+}
+#container3 {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+#container4 {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+#button {
+    margin: 0 auto;
+    width: 200px !important;
+    color: white;
+}
+button {
+    width: 200px !important;
+    font-size: 30px !important;
+}
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/Friends.jpg);
+}
+#cups {
+    position: fixed;
+    float: left;
+    bottom: 1px;
+}
+p {
+    color: white;
+}
